@@ -24,7 +24,7 @@ storyblokInit({
   accessToken: "xr4OhJ2GGQ6Oco2ugxQn0Att",
   // for spaces located in the US or China:
   // apiOptions: {
-  //   region: "us" or "cn", 
+  //   region: "us" or "cn", // you need to specify the region
   // },
   use: [apiPlugin],
   components,
