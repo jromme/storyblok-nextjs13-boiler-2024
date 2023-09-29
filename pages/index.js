@@ -9,7 +9,7 @@ import {
 } from "@storyblok/react";
 import Layout from "../components/Layout";
 
-export default function Home({ story, locales, locale, defaultLocale }) {
+export default function Home({ story, locales, locale, defaultLocale, preview }) {
   story = useStoryblokState(story, {
     resolveRelations: ["popular-articles.articles"],
     language: locale
@@ -32,13 +32,13 @@ export default function Home({ story, locales, locale, defaultLocale }) {
   );
 }
 
-export async function getStaticProps({locales, locale, defaultLocale}) {
+export async function getStaticProps({locales, locale, defaultLocale, preview}) {
   let slug = "home";
 
   let sbParams = {
-    version: "draft", // or 'published',
+    version: preview ? "draft" : 'published',
     resolve_relations: ["popular-articles.articles"],
-    language: locale
+    language: locale,
   };
 
   const storyblokApi = getStoryblokApi();
@@ -50,6 +50,7 @@ export async function getStaticProps({locales, locale, defaultLocale}) {
       defaultLocale,
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      preview: preview || false
     },
     revalidate: 3600,
   };

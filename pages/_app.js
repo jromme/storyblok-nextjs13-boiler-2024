@@ -21,7 +21,7 @@ const components = {
 };
 
 storyblokInit({
-  accessToken: "xr4OhJ2GGQ6Oco2ugxQn0Att",
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOK_ACCESS_TOKEN,
   // for spaces located in the US or China:
   // apiOptions: {
   //   region: "us" or "cn", // you need to specify the region

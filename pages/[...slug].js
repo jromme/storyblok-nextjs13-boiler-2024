@@ -7,7 +7,7 @@ import {
   StoryblokComponent,
 } from "@storyblok/react";
 
-export default function Page({ story, locales, locale, defaultLocale }) {
+export default function Page({ story, locales, locale, defaultLocale, preview }) {
   story = useStoryblokState(story, {
     language: locale
   });
@@ -25,11 +25,11 @@ export default function Page({ story, locales, locale, defaultLocale }) {
   );
 }
 
-export async function getStaticProps({ params, locales, locale, defaultLocale }) {
+export async function getStaticProps({ params, locales, locale, defaultLocale, preview }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
-    version: "draft", // or 'published'
+    version: preview? "draft" : "published",
     language: locale
   };
 
@@ -43,6 +43,7 @@ export async function getStaticProps({ params, locales, locale, defaultLocale })
       defaultLocale,
       story: data ? data.story : false,
       key: data ? data.story.id : false,
+      preview: preview || false
     },
     revalidate: 3600,
   };
@@ -51,7 +52,7 @@ export async function getStaticProps({ params, locales, locale, defaultLocale })
 export async function getStaticPaths({locales}) {
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get("cdn/links/" ,{
-    version: 'draft'
+    version: 'published'
   });
 
   let paths = [];
