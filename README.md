@@ -42,6 +42,12 @@ You can switch between the different branches of this repository; there is one b
 - Branch: [part-6](https://github.com/storyblok/next.js-ultimate-tutorial/tree/part-6)
 - Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/174270)
 
+### Part 7
+- Tutorial: [Create a Preview Environment for Your Next.js Website](https://www.storyblok.com/tp/manage-multilingual-content-in-storyblok-and-next-js)
+- Branch: [part-7](https://github.com/storyblok/next.js-ultimate-tutorial/tree/part-7)
+- Storyblok space: [Create your own copy](https://app.storyblok.com/#!/build/189449)
+
+
 ## Requirements
 
 To use this project you have to have a Storyblok account. If you don't have one yet you can register at [Storyblok](https://www.storyblok.com), it's free.
