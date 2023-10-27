@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { render } from 'storyblok-rich-text-react-renderer';
-
 
 const ArticleTeaser = ({ article }) => {
 return (
@@ -9,14 +7,14 @@ return (
     <img
       className="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
       src={article.image.filename}
-      alt="blog"
+      alt="article image"
     />
 
-    <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+    <h2 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
       {article.title}
-    </h1>
+    </h2>
     <div className="mx-auto text-base leading-relaxed text-gray-500 line-clamp-2">
-      {render(article.teaser)}
+      {article.teaser}
     </div>
 
     <div className="mt-4">

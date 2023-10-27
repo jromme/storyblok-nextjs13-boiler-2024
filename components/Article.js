@@ -14,9 +14,9 @@ const Article = ({ blok }) => {
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
             {blok.title}
           </h1>
-          <h1 className="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-600">
+          <h2 className="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-600">
             {blok.subtitle}
-          </h1>
+          </h2>
           <div className="mb-8 leading-relaxed text-justify">{render(blok.content)}</div>
 
         </div>
