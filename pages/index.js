@@ -27,9 +27,9 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
+      {/* <header>
         <h1>{story ? story.name : "My Site"}</h1>
-      </header>
+      </header> */}
       <Layout locales={locales} locale={locale} defaultLocale={defaultLocale}>
         <StoryblokComponent blok={story.content} />
       </Layout>
