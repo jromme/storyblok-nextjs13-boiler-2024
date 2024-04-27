@@ -1,6 +1,13 @@
 module.exports = {
-    i18n: {
-      locales: ['en', 'es'],
-      defaultLocale: 'en',
-    },
-  }
+  images: {
+    remotePatterns: [
+      {
+        hostname: "a.storyblok.com",
+      },
+    ],
+  },
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+  },
+};
