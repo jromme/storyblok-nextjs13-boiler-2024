@@ -8,6 +8,7 @@ import Hero from "../components/Hero";
 import AllArticles from "../components/AllArticles";
 import Article from "../components/Article";
 import PopularArticles from "../components/PopularArticles";
+import Item from "../components/perv-comp/Item";
 
 const components = {
   feature: Feature,
@@ -18,6 +19,8 @@ const components = {
   "all-articles": AllArticles,
   article: Article,
   "popular-articles": PopularArticles,
+
+  item: Item,
 };
 
 storyblokInit({

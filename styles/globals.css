@@ -18,3 +18,34 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1, h2, h3, h4, h5, p {
+  font-family: Arial Narrow, Arial, sans-serif;
+}
+
+h1 {
+  line-height: .9;
+}
+
+.titanic h6 {
+  flex-basis: 100%;
+  display: block !important;
+  text-align: justify;
+text-align-last: justify;
+text-justify: inter-character;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* safari justify fix */
+.titanic h6:after {
+  content:'';
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  height: 0;
+}
+
+p.mini {
+  font-size: 12px;
+}
+

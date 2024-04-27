@@ -18,19 +18,19 @@ return (
     </div>
 
     <div className="mt-4">
-      <Link href={`/blog/${article.slug}`}>
-        <a
-          className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
-          title="read more"
-        >
+      <Link
+        href={`/blog/${article.slug}`}
+        className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+        title="read more">
+        
           
           Read More »
-        </a>
+        
       </Link>
     </div>
   </div>
 </div>
-)
+);
 };
 
 export default ArticleTeaser;

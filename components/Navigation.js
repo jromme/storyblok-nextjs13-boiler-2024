@@ -17,19 +17,19 @@ const Navigation = ({locales, locale, defaultLocale}) => {
         <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <a>
-                <span className="sr-only">Storyblok</span>
-                <img
-                  className="h-20 w-auto sm:h-10 hidden sm:block"
-                  src='https://a.storyblok.com/f/88751/251x53/0d3909fe96/storyblok-primary.png'
-                  alt="Storyblok"
-                />
-                <img
-                  className="h-20 w-auto sm:h-10 sm:hidden"
-                  src='https://a.storyblok.com/f/88751/92x106/835caf912a/storyblok-logo.png'
-                  alt="Storyblok"
-                />
-              </a>
+
+              <span className="sr-only">Storyblok</span>
+              <img
+                className="h-20 w-auto sm:h-10 hidden sm:block"
+                src='https://a.storyblok.com/f/88751/251x53/0d3909fe96/storyblok-primary.png'
+                alt="Storyblok"
+              />
+              <img
+                className="h-20 w-auto sm:h-10 sm:hidden"
+                src='https://a.storyblok.com/f/88751/92x106/835caf912a/storyblok-logo.png'
+                alt="Storyblok"
+              />
+
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -59,23 +59,29 @@ const Navigation = ({locales, locale, defaultLocale}) => {
             </button>
           </div>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-10">
-            <Link href="/about">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link
+              href="/about"
+              className="text-base font-medium text-gray-500 hover:text-gray-900">
+              
                 
                 About
-              </a>
+              
             </Link>
-            <Link href="/blog">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link
+              href="/blog"
+              className="text-base font-medium text-gray-500 hover:text-gray-900">
+              
                 
                 Blog
-              </a>
+              
             </Link>
-            <Link href="/services">
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link
+              href="/services"
+              className="text-base font-medium text-gray-500 hover:text-gray-900">
+              
                 
                 Services
-              </a>
+              
             </Link>
             {locales.map(loc => (     
                 <span key={loc} onClick={ () => changeLocale(loc)}
@@ -132,31 +138,37 @@ const Navigation = ({locales, locale, defaultLocale}) => {
               </div>
               <div className="mt-6">
                 <nav className="grid gap-y-8">
-                  <Link href="/about">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/chart-bar --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        About
-                      </span>
-                    </a>
+                  <Link
+                    href="/about"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+
+                    {/* <!-- Heroicon name: outline/chart-bar --> */}
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      
+                      About
+                    </span>
+
                   </Link>
-                  <Link href="/blog">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      {/* <!-- Heroicon name: outline/cursor-click --> */}
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        Blog
-                      </span>
-                    </a>
+                  <Link
+                    href="/blog"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+
+                    {/* <!-- Heroicon name: outline/cursor-click --> */}
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      
+                      Blog
+                    </span>
+
                   </Link>
-                  <Link href="/services">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
-                      <span className="ml-3 text-base font-medium text-gray-900">
-                        
-                        Services
-                      </span>
-                    </a>
+                  <Link
+                    href="/services"
+                    className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
+
+                    <span className="ml-3 text-base font-medium text-gray-900">
+                      
+                      Services
+                    </span>
+
                   </Link>
                   {locales.map(loc => (     
                 <span key={loc} onClick={ () => changeLocale(loc)}

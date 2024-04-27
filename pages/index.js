@@ -1,7 +1,6 @@
 import Head from "next/head";
 // import styles from "../styles/Home.module.css";
 
-
 import {
   useStoryblokState,
   getStoryblokApi,
@@ -9,10 +8,16 @@ import {
 } from "@storyblok/react";
 import Layout from "../components/Layout";
 
-export default function Home({ story, locales, locale, defaultLocale, preview }) {
+export default function Home({
+  story,
+  locales,
+  locale,
+  defaultLocale,
+  preview,
+}) {
   story = useStoryblokState(story, {
     resolveRelations: ["popular-articles.articles"],
-    language: locale
+    language: locale,
   });
 
   return (
@@ -22,9 +27,9 @@ export default function Home({ story, locales, locale, defaultLocale, preview })
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <header>
+      <header>
         <h1>{story ? story.name : "My Site"}</h1>
-      </header> */}
+      </header>
       <Layout locales={locales} locale={locale} defaultLocale={defaultLocale}>
         <StoryblokComponent blok={story.content} />
       </Layout>
@@ -32,11 +37,16 @@ export default function Home({ story, locales, locale, defaultLocale, preview })
   );
 }
 
-export async function getStaticProps({locales, locale, defaultLocale, preview}) {
+export async function getStaticProps({
+  locales,
+  locale,
+  defaultLocale,
+  preview,
+}) {
   let slug = "home";
 
   let sbParams = {
-    version: preview ? "draft" : 'published',
+    version: preview ? "draft" : "published",
     resolve_relations: ["popular-articles.articles"],
     language: locale,
   };
@@ -45,12 +55,12 @@ export async function getStaticProps({locales, locale, defaultLocale, preview}) 
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
   return {
     props: {
-      locales, 
-      locale, 
+      locales,
+      locale,
       defaultLocale,
       story: data ? data.story : false,
       key: data ? data.story.id : false,
-      preview: preview || false
+      preview: preview || false,
     },
     revalidate: 3600,
   };
